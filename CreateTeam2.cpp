@@ -14,14 +14,12 @@ Team CreateTeam2(std::list<Player>& players, std::list<Trainer>& trainers)
     int TrainerNumber;
     std::cin >> TrainerNumber;
     auto it = trainers.cbegin();
-    int x = 3;
     
     if (TrainerNumber == 1)
     {
         trainer = (*it);
         std::cout << "You choosed " << trainer.GetTrainersName() << " as a trainer." << std::endl;
         trainers.erase(it);
-        x--;
     }
     else if (TrainerNumber == 2)
     {
@@ -29,11 +27,10 @@ Team CreateTeam2(std::list<Player>& players, std::list<Trainer>& trainers)
         trainer = (*it);
         std::cout << "You choosed " << trainer.GetTrainersName() << " as a trainer." << std::endl;
         trainers.erase(it);
-        x--;
     }
     else if (TrainerNumber == 3)
     {
-        it++;
+        it=trainers.end();
         trainer = (*it);
         std::cout << "You choosed " << trainer.GetTrainersName() << " as a trainer." << std::endl;
         trainers.erase(it);
